@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <FootGuide />
+    <FootGuide v-show="$route.meta.showFooter" />
   </div>
 </template>
 
@@ -9,7 +9,10 @@
 import FootGuide from "./components/FootGuide/FootGuide.vue";
 export default {
   name: "app",
-  components: { FootGuide }
+  components: { FootGuide },
+  meta: {
+    showFooter: true
+  }
 };
 </script>
 
